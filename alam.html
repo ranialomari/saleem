@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>العلم الأردني – رايـة المجد ورؤيـة جيل</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#CC0001;--green:#007A3D;--gold:#D4AF37;
+  --cream:#f8f5ee;--dark:#0d0d0d;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:var(--cream);font-family:'Tajawal',sans-serif;overflow-x:hidden}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;
+  background:radial-gradient(ellipse at 50% 60%,#1a0800 0%,var(--dark) 70%);}
+.hero::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 20% 50%,rgba(204,0,1,.08),transparent 50%),
+             radial-gradient(circle at 80% 50%,rgba(0,122,61,.08),transparent 50%);pointer-events:none}
+
+/* stars bg */
+.stars-bg{position:fixed;inset:0;pointer-events:none;z-index:0}
+.star-dot{position:absolute;border-radius:50%;background:rgba(255,255,255,.55);animation:twinkle var(--d,3s) ease-in-out infinite var(--dl,0s)}
+@keyframes twinkle{0%,100%{opacity:.15}50%{opacity:.85}}
+
+/* main flag */
+.flag-main{width:460px;height:230px;position:relative;border-radius:4px;overflow:hidden;margin-bottom:2.5rem;
+  box-shadow:0 0 0 1px rgba(255,255,255,.1),0 40px 100px rgba(0,0,0,.85),0 0 60px rgba(204,0,1,.12);
+  animation:flagFloat 4s ease-in-out infinite;z-index:1}
+@keyframes flagFloat{0%,100%{transform:translateY(0) rotate(-.3deg)}50%{transform:translateY(-10px) rotate(.3deg)}}
+.stripe{width:100%;height:33.333%}
+.s-black{background:#000}.s-white{background:#fff}.s-green{background:var(--green)}
+.tri{position:absolute;top:0;left:0;width:0;height:0;border-style:solid;border-width:115px 0 115px 175px;border-color:transparent transparent transparent var(--red)}
+.star-wrap{position:absolute;top:50%;left:64px;transform:translate(-50%,-50%);width:58px;height:58px;animation:spin 25s linear infinite}
+@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.flag-shimmer{position:absolute;inset:0;background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.07) 50%,transparent 100%);
+  animation:shimmer 3.5s ease-in-out infinite;pointer-events:none}
+@keyframes shimmer{0%{transform:translateX(-100%)}100%{transform:translateX(200%)}}
+
+.hero-title{font-family:'Amiri',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;text-align:center;
+  color:var(--gold);text-shadow:0 0 50px rgba(212,175,55,.5);margin-bottom:.75rem;z-index:1}
+.hero-sub{font-size:1rem;font-weight:300;color:rgba(255,255,255,.45);letter-spacing:.18em;z-index:1;margin-bottom:.5rem}
+.scroll-hint{color:rgba(255,255,255,.3);font-size:.75rem;letter-spacing:.2em;animation:bounce 2s ease infinite;margin-top:2.5rem;z-index:1}
+@keyframes bounce{0%,100%{transform:translateY(0);opacity:.3}50%{transform:translateY(8px);opacity:.65}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.au{animation:fadeUp 1.2s ease both}
+
+/* ── SECTION ── */
+.section{padding:5.5rem 2rem;max-width:1100px;margin:0 auto}
+.section-label{font-size:.68rem;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:.75rem}
+.section-title{font-family:'Amiri',serif;font-size:clamp(1.7rem,4vw,2.8rem);font-weight:700;margin-bottom:3rem;line-height:1.45;color:var(--cream)}
+
+/* ── COLORS GRID ── */
+.colors-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem;margin-bottom:3.5rem}
+.color-card{border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.07);transition:transform .35s ease,box-shadow .35s ease}
+.color-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.6)}
+.color-swatch{height:90px;position:relative}
+.color-swatch::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.12) 0%,transparent 60%)}
+.color-info{background:rgba(255,255,255,.04);padding:1.25rem;border-top:1px solid rgba(255,255,255,.06)}
+.color-name{font-family:'Amiri',serif;font-size:1.3rem;font-weight:700;margin-bottom:.45rem;color:var(--cream)}
+.color-meaning{font-size:.85rem;color:rgba(255,255,255,.5);line-height:1.75}
+
+.info-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:2.5rem;text-align:center}
+.info-box p{font-family:'Amiri',serif;font-size:1.45rem;color:var(--cream);line-height:1.85;max-width:680px;margin:0 auto}
+
+/* ── TIMELINE ── */
+.tl-section{background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);padding:5.5rem 2rem}
+.tl-inner{max-width:1100px;margin:0 auto}
+.timeline{position:relative;margin-top:3rem}
+.timeline::before{content:'';position:absolute;right:50%;top:0;bottom:0;width:1px;
+  background:linear-gradient(to bottom,transparent,rgba(212,175,55,.35) 10%,rgba(212,175,55,.35) 90%,transparent);
+  transform:translateX(50%)}
+.tl-item{display:grid;grid-template-columns:1fr 64px 1fr;margin-bottom:4rem;opacity:0;animation:fadeUp .8s ease forwards}
+.tl-item:nth-child(1){animation-delay:.1s}.tl-item:nth-child(2){animation-delay:.25s}
+.tl-item:nth-child(3){animation-delay:.4s}.tl-item:nth-child(4){animation-delay:.55s}
+.tl-item:nth-child(5){animation-delay:.7s}.tl-item:nth-child(6){animation-delay:.85s}
+/* odd: text | dot | flag */
+.tl-item.odd .tl-text{order:1;text-align:left}.tl-item.odd .tl-dot{order:2}.tl-item.odd .tl-flag{order:3}
+/* even: flag | dot | text */
+.tl-item.even .tl-flag{order:1}.tl-item.even .tl-dot{order:2}.tl-item.even .tl-text{order:3}
+
+.tl-dot{display:flex;flex-direction:column;align-items:center;gap:0;position:relative;z-index:2}
+.tl-dot-c{width:14px;height:14px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(212,175,55,.2),0 0 14px rgba(212,175,55,.45);flex-shrink:0}
+.tl-year{margin-top:8px;background:var(--gold);color:#000;font-size:.68rem;font-weight:700;padding:2px 9px;border-radius:20px;white-space:nowrap;letter-spacing:.05em}
+.tl-text{padding:0 2rem}
+.tl-era{font-size:.65rem;letter-spacing:.25em;color:var(--gold);display:block;margin-bottom:.5rem;text-transform:uppercase}
+.tl-title{font-family:'Amiri',serif;font-size:1.35rem;font-weight:700;color:var(--cream);margin-bottom:.7rem;line-height:1.45}
+.tl-desc{font-size:.85rem;color:rgba(255,255,255,.5);line-height:1.85}
+.tl-flag{padding:0 2rem;display:flex;justify-content:center}
+
+/* mini flags */
+.mflag{width:190px;height:95px;position:relative;border-radius:3px;overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,.65),0 0 0 1px rgba(255,255,255,.08);
+  transition:transform .4s ease,box-shadow .4s ease;flex-shrink:0}
+.mflag:hover{transform:scale(1.06);box-shadow:0 20px 50px rgba(0,0,0,.75),0 0 20px rgba(212,175,55,.25)}
+.mf-stripes{display:flex;flex-direction:column;height:100%}
+.mf-s{flex:1}
+.mf-tri{position:absolute;top:0;left:0;width:0;height:0;border-style:solid}
+
+/* ── STAR SECTION ── */
+.star-section{padding:5.5rem 2rem;max-width:1100px;margin:0 auto}
+.star-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.star-svg-wrap{display:flex;justify-content:center}
+.star-big{width:260px;height:260px;filter:drop-shadow(0 0 30px rgba(255,255,255,.45));animation:starPulse 3s ease-in-out infinite}
+@keyframes starPulse{0%,100%{filter:drop-shadow(0 0 18px rgba(255,255,255,.3))}50%{filter:drop-shadow(0 0 40px rgba(255,255,255,.75))}}
+.points-list{list-style:none}
+.points-list li{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.2rem;opacity:0;animation:fadeUp .6s ease forwards}
+.points-list li:nth-child(1){animation-delay:.1s}.points-list li:nth-child(2){animation-delay:.2s}
+.points-list li:nth-child(3){animation-delay:.3s}.points-list li:nth-child(4){animation-delay:.4s}
+.points-list li:nth-child(5){animation-delay:.5s}.points-list li:nth-child(6){animation-delay:.6s}
+.points-list li:nth-child(7){animation-delay:.7s}
+.pt-num{width:28px;height:28px;border-radius:50%;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.4);
+  color:var(--gold);font-size:.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pt-text{font-size:.88rem;color:rgba(255,255,255,.6);line-height:1.75;padding-top:4px}
+
+/* ── QUIZ ── */
+.quiz-section{background:linear-gradient(135deg,rgba(0,122,61,.04),transparent 40%,rgba(204,0,1,.04));
+  border-top:1px solid rgba(255,255,255,.05);padding:5.5rem 2rem}
+.quiz-inner{max-width:860px;margin:0 auto}
+
+/* launch card */
+.quiz-launch{text-align:center;padding:3rem 2rem}
+.quiz-launch-icon{font-size:4rem;margin-bottom:1.5rem;animation:floatIcon 3s ease-in-out infinite}
+@keyframes floatIcon{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.quiz-btn{display:inline-flex;align-items:center;gap:.75rem;background:var(--gold);color:#000;
+  font-family:'Tajawal',sans-serif;font-size:1.1rem;font-weight:700;padding:.95rem 2.5rem;
+  border:none;border-radius:50px;cursor:pointer;margin-top:1.5rem;
+  box-shadow:0 8px 30px rgba(212,175,55,.4);transition:transform .2s ease,box-shadow .2s ease}
+.quiz-btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 14px 40px rgba(212,175,55,.55)}
+.quiz-btn:active{transform:scale(.97)}
+
+/* count selector */
+.count-screen{display:none;text-align:center;padding:2rem 0}
+.count-title{font-family:'Amiri',serif;font-size:1.6rem;color:var(--cream);margin-bottom:2rem}
+.count-options{display:flex;flex-wrap:wrap;justify-content:center;gap:.85rem;margin-bottom:2rem}
+.count-opt{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);
+  color:var(--cream);font-family:'Tajawal',sans-serif;font-size:1rem;font-weight:500;
+  padding:.65rem 1.6rem;border-radius:50px;cursor:pointer;transition:all .2s ease}
+.count-opt:hover{background:rgba(212,175,55,.15);border-color:rgba(212,175,55,.5);color:var(--gold)}
+.count-opt.selected{background:rgba(212,175,55,.2);border-color:var(--gold);color:var(--gold)}
+.start-quiz-btn{display:inline-flex;align-items:center;gap:.6rem;background:var(--green);color:#fff;
+  font-family:'Tajawal',sans-serif;font-size:1rem;font-weight:700;padding:.85rem 2.2rem;
+  border:none;border-radius:50px;cursor:pointer;opacity:.4;pointer-events:none;
+  transition:all .25s ease;margin-top:.5rem}
+.start-quiz-btn.ready{opacity:1;pointer-events:auto;box-shadow:0 6px 24px rgba(0,122,61,.45)}
+.start-quiz-btn.ready:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(0,122,61,.6)}
+
+/* quiz screen */
+.quiz-screen{display:none;padding:1rem 0}
+.quiz-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.75rem}
+.q-counter{font-size:.85rem;color:rgba(255,255,255,.5)}
+.q-counter strong{color:var(--gold);font-size:1rem}
+.q-score-live{font-size:.85rem;color:rgba(255,255,255,.5)}
+.q-score-live span{color:#4ade80;font-weight:700}
+
+/* progress bar */
+.progress-wrap{background:rgba(255,255,255,.07);border-radius:50px;height:6px;margin-bottom:2rem;overflow:hidden}
+.progress-fill{height:100%;border-radius:50px;background:linear-gradient(90deg,var(--green),var(--gold));
+  transition:width .5s cubic-bezier(.4,0,.2,1)}
+
+/* question card */
+.q-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:2.5rem 2rem;margin-bottom:1.5rem}
+.q-num-badge{display:inline-block;background:rgba(212,175,55,.15);color:var(--gold);
+  font-size:.72rem;font-weight:700;padding:3px 12px;border-radius:20px;letter-spacing:.1em;margin-bottom:1rem}
+.q-text{font-family:'Amiri',serif;font-size:1.35rem;color:var(--cream);line-height:1.75}
+
+/* answer options */
+.answers-grid{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-top:1.75rem}
+.ans-btn{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);
+  color:rgba(255,255,255,.8);font-family:'Tajawal',sans-serif;font-size:.95rem;
+  padding:1rem 1.25rem;border-radius:14px;cursor:pointer;text-align:right;
+  transition:all .2s ease;line-height:1.5;position:relative;overflow:hidden}
+.ans-btn:hover:not(:disabled){background:rgba(212,175,55,.08);border-color:rgba(212,175,55,.35);color:var(--gold)}
+.ans-btn.correct{background:rgba(0,200,80,.15)!important;border-color:#00c850!important;color:#4ade80!important;animation:correctPop .4s ease}
+.ans-btn.wrong{background:rgba(204,0,1,.15)!important;border-color:var(--red)!important;color:#ff6b6b!important;animation:wrongShake .4s ease}
+.ans-btn.reveal-correct{background:rgba(0,200,80,.1)!important;border-color:rgba(0,200,80,.5)!important;color:#4ade80!important}
+.ans-btn:disabled{cursor:default}
+@keyframes correctPop{0%{transform:scale(1)}40%{transform:scale(1.04)}100%{transform:scale(1)}}
+@keyframes wrongShake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+
+.ans-letter{display:inline-flex;align-items:center;justify-content:center;
+  width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.08);
+  font-size:.75rem;font-weight:700;margin-left:.6rem;flex-shrink:0}
+
+/* feedback bar */
+.feedback-bar{border-radius:12px;padding:1rem 1.25rem;margin-top:.75rem;font-size:.9rem;
+  display:none;align-items:center;gap:.75rem;animation:fadeUp .3s ease}
+.feedback-bar.show{display:flex}
+.feedback-bar.correct-fb{background:rgba(0,200,80,.1);border:1px solid rgba(0,200,80,.3);color:#4ade80}
+.feedback-bar.wrong-fb{background:rgba(204,0,1,.1);border:1px solid rgba(204,0,1,.3);color:#ff8080}
+.next-btn{margin-top:1rem;display:none;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  color:var(--cream);font-family:'Tajawal',sans-serif;font-size:.95rem;font-weight:500;
+  padding:.75rem 1.8rem;border-radius:50px;cursor:pointer;transition:all .2s ease;width:100%}
+.next-btn.show{display:block}
+.next-btn:hover{background:rgba(212,175,55,.12);border-color:rgba(212,175,55,.4);color:var(--gold)}
+
+/* results screen */
+.results-screen{display:none;text-align:center;padding:2rem 0}
+.results-emoji{font-size:5rem;animation:resultBounce 1s cubic-bezier(.36,.07,.19,.97) both}
+@keyframes resultBounce{0%{transform:scale(0) rotate(-15deg);opacity:0}60%{transform:scale(1.2) rotate(5deg)}100%{transform:scale(1) rotate(0);opacity:1}}
+.results-score{font-family:'Amiri',serif;font-size:3.5rem;font-weight:700;margin:1rem 0;
+  background:linear-gradient(135deg,var(--gold),#f0d060);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.results-label{font-size:1.1rem;color:rgba(255,255,255,.55);margin-bottom:2.5rem}
+.results-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:2.5rem;max-width:400px;margin-inline:auto}
+.rc{border-radius:16px;padding:1.5rem;text-align:center}
+.rc.right{background:rgba(0,200,80,.08);border:1px solid rgba(0,200,80,.25)}
+.rc.wrong{background:rgba(204,0,1,.08);border:1px solid rgba(204,0,1,.2)}
+.rc-num{font-size:2.2rem;font-weight:700;margin-bottom:.3rem}
+.rc.right .rc-num{color:#4ade80}.rc.wrong .rc-num{color:#ff6b6b}
+.rc-lbl{font-size:.8rem;color:rgba(255,255,255,.45)}
+.results-msg{font-family:'Amiri',serif;font-size:1.2rem;color:var(--cream);margin-bottom:2rem;line-height:1.7}
+.retry-btn{display:inline-flex;align-items:center;gap:.6rem;background:rgba(212,175,55,.15);
+  border:1px solid rgba(212,175,55,.4);color:var(--gold);font-family:'Tajawal',sans-serif;
+  font-size:1rem;font-weight:600;padding:.85rem 2rem;border-radius:50px;cursor:pointer;
+  transition:all .2s ease;margin:.4rem}
+.retry-btn:hover{background:rgba(212,175,55,.25);transform:translateY(-2px)}
+
+/* confetti */
+.confetti-wrap{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:999;overflow:hidden}
+.cf{position:absolute;width:8px;height:12px;border-radius:2px;top:-20px;animation:cfFall var(--dur) linear var(--del) both}
+@keyframes cfFall{to{transform:translateY(110vh) rotate(var(--rot));opacity:0}}
+
+@media(max-width:600px){
+  .answers-grid{grid-template-columns:1fr}
+  .results-cards{grid-template-columns:1fr 1fr}
+}
+
+/* ── FOOTER ── */
+footer{padding:4rem 2rem;text-align:center;border-top:1px solid rgba(255,255,255,.05)}
+.footer-bar{display:flex;width:220px;height:7px;border-radius:4px;overflow:hidden;margin:0 auto 2rem;box-shadow:0 2px 12px rgba(0,0,0,.6)}
+.footer-bar span{flex:1}
+.footer-title{font-family:'Amiri',serif;font-size:1.6rem;color:var(--gold);margin-bottom:.5rem}
+.footer-sub{font-size:.78rem;color:rgba(255,255,255,.3);letter-spacing:.15em}
+
+@media(max-width:700px){
+  .flag-main{width:310px;height:155px}
+  .tri{border-width:77.5px 0 77.5px 117px}
+  .star-wrap{left:43px;width:42px;height:42px}
+  .timeline::before{display:none}
+  .tl-item{grid-template-columns:1fr;grid-template-rows:auto}
+  .tl-item.odd .tl-text,.tl-item.even .tl-text{order:1}
+  .tl-item.odd .tl-dot,.tl-item.even .tl-dot{order:2}
+  .tl-item.odd .tl-flag,.tl-item.even .tl-flag{order:3;justify-content:flex-start}
+  .star-grid{grid-template-columns:1fr}
+  .star-big{width:180px;height:180px}
+}
+</style>
+</head>
+<body>
+
+<div class="stars-bg" id="stars"></div>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="flag-main">
+    <div class="stripe s-black"></div>
+    <div class="stripe s-white"></div>
+    <div class="stripe s-green"></div>
+    <div class="tri"></div>
+    <div class="star-wrap">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;filter:drop-shadow(0 0 10px rgba(255,255,255,.9))">
+        <path d="M50,6 L55.8,26.8 L74.5,20 L64,38.5 L83,48.5 L64.5,55 L69,74.5 L50,62.5 L31,74.5 L35.5,55 L17,48.5 L36,38.5 L25.5,20 L44.2,26.8 Z" fill="#fff"/>
+      </svg>
+    </div>
+    <div class="flag-shimmer"></div>
+  </div>
+
+  <h1 class="hero-title au">رايـة المجد ورؤيـة جيل</h1>
+  <p class="hero-sub au">العلم الأردني · تاريخٌ وهوية · ١٩١٦ – ٢٠٢٦</p>
+  <p class="scroll-hint">▼ &nbsp; مرر للاسفل &nbsp; ▼</p>
+</section>
+
+<!-- ═══ COLORS ═══ -->
+<section>
+  <div class="section">
+    <span class="section-label">فلسفة الألوان</span>
+    <h2 class="section-title">كل لون يحكي قصة أمة</h2>
+    <div class="colors-grid">
+      <div class="color-card">
+        <div class="color-swatch" style="background:#000"></div>
+        <div class="color-info">
+          <p class="color-name">الأسود</p>
+          <p class="color-meaning">يرمز إلى الدولة العباسية ويمثّل الكفاح والعزيمة عبر القرون</p>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#fff;border-bottom:1px solid rgba(0,0,0,.08)"></div>
+        <div class="color-info">
+          <p class="color-name">الأبيض</p>
+          <p class="color-meaning">يرمز إلى الدولة الأموية ويعبّر عن الصفاء والسلام والنقاء</p>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:var(--green)"></div>
+        <div class="color-info">
+          <p class="color-name">الأخضر</p>
+          <p class="color-meaning">يرمز إلى الدولة الفاطمية ويجسّد الإسلام والأمل والازدهار</p>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:var(--red)"></div>
+        <div class="color-info">
+          <p class="color-name">الأحمر</p>
+          <p class="color-meaning">يرمز إلى الثورة العربية الكبرى والهاشميين؛ رمز التضحية والشجاعة</p>
+        </div>
+      </div>
+    </div>
+    <div class="info-box">
+      <span class="section-label" style="justify-content:center;display:flex">النجمة السباعية</span>
+      <p>النجمة ذات السبعة أضلاع رمزٌ للوحدة الوطنية — سبعة أركان تمثّل الإيمان والوطن والعائلة والفضيلة والاجتماع والتراب وأبناء الأردن الأوفياء</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TIMELINE ═══ -->
+<section class="tl-section">
+  <div class="tl-inner">
+    <span class="section-label">عبر الزمن</span>
+    <h2 class="section-title">مراحل تطوّر العلم الأردني</h2>
+    <div class="timeline">
+
+      <!-- 1916 -->
+      <div class="tl-item odd">
+        <div class="tl-text">
+          <span class="tl-era">الثورة العربية الكبرى</span>
+          <h3 class="tl-title">علم الثورة العربية ١٩١٦</h3>
+          <p class="tl-desc">أطلق الشريف الحسين بن علي الثورةَ العربية الكبرى ورُفع أول علم يجمع الألوان الأربعة: الأسود والأبيض والأخضر والأحمر — ألوان الوحدة التي اقترحها المفكر محمد رشيد رضا لتعبّر عن الحضارات الإسلامية المتعاقبة.</p>
+        </div>
+        <div class="tl-dot">
+          <div class="tl-dot-c"></div>
+          <div class="tl-year">١٩١٦</div>
+        </div>
+        <div class="tl-flag">
+          <div class="mflag">
+            <div class="mf-stripes">
+              <div class="mf-s" style="background:#000"></div>
+              <div class="mf-s" style="background:#007A3D"></div>
+              <div class="mf-s" style="background:#fff"></div>
+            </div>
+            <div class="mf-tri" style="border-width:47.5px 0 47.5px 72px;border-color:transparent transparent transparent var(--red)"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1920 -->
+      <div class="tl-item even">
+        <div class="tl-flag">
+          <div class="mflag">
+            <div class="mf-stripes">
+              <div class="mf-s" style="background:#007A3D"></div>
+              <div class="mf-s" style="background:#fff"></div>
+              <div class="mf-s" style="background:#000"></div>
+              <div class="mf-s" style="background:var(--red)"></div>
+            </div>
+          </div>
+        </div>
+        <div class="tl-dot">
+          <div class="tl-dot-c"></div>
+          <div class="tl-year">١٩٢٠</div>
+        </div>
+        <div class="tl-text">
+          <span class="tl-era">مملكة سوريا</span>
+          <h3 class="tl-title">علم المملكة العربية السورية</h3>
+          <p class="tl-desc">قُدّم هذا العلم حين أُعلن الأمير فيصل بن الحسين ملكًا على سوريا، وكان يحمل ألوان الثورة بترتيب مختلف وبدون المثلث الأحمر، مع أربعة أشرطة أفقية متساوية.</p>
+        </div>
+      </div>
+
+      <!-- 1921 -->
+      <div class="tl-item odd">
+        <div class="tl-text">
+          <span class="tl-era">تأسيس الإمارة</span>
+          <h3 class="tl-title">علم إمارة شرق الأردن ١٩٢١</h3>
+          <p class="tl-desc">في أبريل ١٩٢١ تأسّست إمارة شرق الأردن تحت قيادة الأمير عبدالله الأول ابن الحسين، واتُّخذ علمٌ مستوحى من ألوان الثورة العربية مع إضافة المثلث الأحمر على الجانب الأيسر للتمييز.</p>
+        </div>
+        <div class="tl-dot">
+          <div class="tl-dot-c"></div>
+          <div class="tl-year">١٩٢١</div>
+        </div>
+        <div class="tl-flag">
+          <div class="mflag">
+            <div class="mf-stripes">
+              <div class="mf-s" style="background:#000"></div>
+              <div class="mf-s" style="background:#fff"></div>
+              <div class="mf-s" style="background:#007A3D"></div>
+            </div>
+            <div class="mf-tri" style="border-width:47.5px 0 47.5px 72px;border-color:transparent transparent transparent var(--red)"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1928 -->
+      <div class="tl-item even">
+        <div class="tl-flag">
+          <div class="mflag">
+            <div class="mf-stripes">
+              <div class="mf-s" style="background:#000"></div>
+              <div class="mf-s" style="background:#fff"></div>
+              <div class="mf-s" style="background:#007A3D"></div>
+            </div>
+            <div class="mf-tri" style="border-width:47.5px 0 47.5px 72px;border-color:transparent transparent transparent var(--red)"></div>
+            <div style="position:absolute;top:50%;left:36px;transform:translate(-50%,-50%)">
+              <svg width="18" height="18" viewBox="0 0 100 100"><path d="M50,6 L55.8,26.8 L74.5,20 L64,38.5 L83,48.5 L64.5,55 L69,74.5 L50,62.5 L31,74.5 L35.5,55 L17,48.5 L36,38.5 L25.5,20 L44.2,26.8 Z" fill="#fff"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="tl-dot">
+          <div class="tl-dot-c"></div>
+          <div class="tl-year">١٩٢٨</div>
+        </div>
+        <div class="tl-text">
+          <span class="tl-era">إضافة النجمة</span>
+          <h3 class="tl-title">ولادة النجمة السباعية</h3>
+          <p class="tl-desc">أُضيفت النجمة البيضاء السباعية إلى المثلث الأحمر لأول مرة، وكانت أضلاعها السبعة ترمز إلى سورة الفاتحة والأقاليم السبعة الكبرى في المملكة.</p>
+        </div>
+      </div>
+
+      <!-- 1946 -->
+      <div class="tl-item odd">
+        <div class="tl-text">
+          <span class="tl-era">الاستقلال الوطني</span>
+          <h3 class="tl-title">علم المملكة الأردنية الهاشمية ١٩٤٦</h3>
+          <p class="tl-desc">في ٢٥ مايو ١٩٤٦ نالت الأردن استقلالها الكامل وأُعلنت المملكة الأردنية الهاشمية. اعتُمد العلم الوطني رسميًا بمرسوم ملكي ليرمز إلى السيادة الجديدة وانتهاء عهد الانتداب البريطاني.</p>
+        </div>
+        <div class="tl-dot">
+          <div class="tl-dot-c"></div>
+          <div class="tl-year">١٩٤٦</div>
+        </div>
+        <div class="tl-flag">
+          <div class="mflag" style="box-shadow:0 0 25px rgba(212,175,55,.3),0 10px 30px rgba(0,0,0,.6)">
+            <div class="mf-stripes">
+              <div class="mf-s" style="background:#000"></div>
+              <div class="mf-s" style="background:#fff"></div>
+              <div class="mf-s" style="background:#007A3D"></div>
+            </div>
+            <div class="mf-tri" style="border-width:47.5px 0 47.5px 72px;border-color:transparent transparent transparent var(--red)"></div>
+            <div style="position:absolute;top:50%;left:36px;transform:translate(-50%,-50%)">
+              <svg width="22" height="22" viewBox="0 0 100 100"><path d="M50,6 L55.8,26.8 L74.5,20 L64,38.5 L83,48.5 L64.5,55 L69,74.5 L50,62.5 L31,74.5 L35.5,55 L17,48.5 L36,38.5 L25.5,20 L44.2,26.8 Z" fill="#fff"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2026 -->
+      <div class="tl-item even">
+        <div class="tl-flag">
+          <div class="mflag" style="box-shadow:0 0 40px rgba(212,175,55,.5),0 15px 40px rgba(0,0,0,.7)">
+            <div class="mf-stripes">
+              <div class="mf-s" style="background:#000"></div>
+              <div class="mf-s" style="background:#fff"></div>
+              <div class="mf-s" style="background:#007A3D"></div>
+            </div>
+            <div class="mf-tri" style="border-width:47.5px 0 47.5px 72px;border-color:transparent transparent transparent var(--red)"></div>
+            <div style="position:absolute;top:50%;left:36px;transform:translate(-50%,-50%);animation:spin 8s linear infinite">
+              <svg width="24" height="24" viewBox="0 0 100 100">
+                <path d="M50,6 L55.8,26.8 L74.5,20 L64,38.5 L83,48.5 L64.5,55 L69,74.5 L50,62.5 L31,74.5 L35.5,55 L17,48.5 L36,38.5 L25.5,20 L44.2,26.8 Z" fill="#fff"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="tl-dot">
+          <div class="tl-dot-c" style="background:var(--gold);box-shadow:0 0 0 6px rgba(212,175,55,.25),0 0 24px rgba(212,175,55,.65)"></div>
+          <div class="tl-year">٢٠٢٦</div>
+        </div>
+        <div class="tl-text">
+          <span class="tl-era">يوم العلم الأردني</span>
+          <h3 class="tl-title">رايـة المجد ورؤيـة جيل</h3>
+          <p class="tl-desc">مسابقة وطنية إبداعية تجمع بين أصالة الرمز الأردني والحداثة التقنية والفنية. يُشكّل المعرض الختامي لوحةً وطنية متكاملة تبقى في الذاكرة — موعد التسليم الثلاثاء ٢٠٢٦/٣/٣١.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STAR ═══ -->
+<section class="star-section">
+  <span class="section-label">النجمة السباعية</span>
+  <h2 class="section-title">سبعة أضلاع — سبعة معانٍ</h2>
+  <div class="star-grid">
+    <div class="star-svg-wrap">
+      <svg class="star-big" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+        <circle cx="100" cy="100" r="72" fill="none" stroke="rgba(212,175,55,.12)" stroke-width="1" stroke-dasharray="4 3"/>
+        <!-- 7 point labels around the star -->
+        <path d="M100,12 L111.6,53.6 L149,40 L128,76 L166,98 L129,110 L138,149 L100,125 L62,149 L71,110 L34,98 L72,76 L51,40 L88.4,53.6 Z" fill="#fff" opacity=".95"/>
+        <!-- colored tip dots -->
+        <circle cx="100" cy="12" r="5" fill="var(--gold)" opacity=".9"/>
+        <circle cx="149" cy="40" r="5" fill="var(--red)" opacity=".9"/>
+        <circle cx="166" cy="98" r="5" fill="var(--green)" opacity=".9"/>
+        <circle cx="138" cy="149" r="5" fill="var(--gold)" opacity=".9"/>
+        <circle cx="62"  cy="149" r="5" fill="var(--red)" opacity=".9"/>
+        <circle cx="34"  cy="98"  r="5" fill="var(--green)" opacity=".9"/>
+        <circle cx="51"  cy="40"  r="5" fill="var(--gold)" opacity=".9"/>
+      </svg>
+    </div>
+    <div>
+      <ul class="points-list">
+        <li><div class="pt-num">١</div><p class="pt-text">سورة الفاتحة — أم الكتاب ومحور الهوية الإسلامية</p></li>
+        <li><div class="pt-num">٢</div><p class="pt-text">الإيمان بالله والإخلاص للوطن</p></li>
+        <li><div class="pt-num">٣</div><p class="pt-text">الفضيلة والكرم الأردني العريق</p></li>
+        <li><div class="pt-num">٤</div><p class="pt-text">الوحدة الوطنية والتلاحم الاجتماعي</p></li>
+        <li><div class="pt-num">٥</div><p class="pt-text">الشجاعة والتضحية في سبيل الوطن</p></li>
+        <li><div class="pt-num">٦</div><p class="pt-text">التراب الأردني المقدّس من البادية إلى خليج العقبة</p></li>
+        <li><div class="pt-num">٧</div><p class="pt-text">أبناء الأردن المتوحّدون تحت راية المملكة الهاشمية</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ QUIZ ═══ -->
+<section class="quiz-section">
+  <div class="quiz-inner">
+    <span class="section-label">اختبر نفسك</span>
+    <h2 class="section-title">اختبر معلوماتك عن الأردن</h2>
+
+    <!-- LAUNCH -->
+    <div class="quiz-launch" id="quizLaunch">
+      <div class="quiz-launch-icon">🏅</div>
+      <p style="font-size:1rem;color:rgba(255,255,255,.5);line-height:1.8;max-width:520px;margin:0 auto">
+        بنك أسئلة متنوّع يشمل تاريخ الأردن وعلمه الوطني والمملكة الهاشمية والجغرافيا والثقافة — اختر عدد الأسئلة وابدأ!
+      </p>
+      <button class="quiz-btn" onclick="showCountScreen()">🎯 &nbsp; اختبر معلوماتك</button>
+    </div>
+
+    <!-- COUNT SELECTOR -->
+    <div class="count-screen" id="countScreen">
+      <h3 class="count-title">كم سؤالاً تريد؟</h3>
+      <div class="count-options">
+        <button class="count-opt" onclick="selectCount(5,this)">5 أسئلة</button>
+        <button class="count-opt" onclick="selectCount(10,this)">10 أسئلة</button>
+        <button class="count-opt" onclick="selectCount(15,this)">15 سؤالاً</button>
+        <button class="count-opt" onclick="selectCount(20,this)">20 سؤالاً</button>
+        <button class="count-opt" onclick="selectCount(30,this)">30 سؤالاً</button>
+        <button class="count-opt" onclick="selectCount(50,this)">50 سؤالاً</button>
+      </div>
+      <button class="start-quiz-btn" id="startBtn" onclick="startQuiz()">▶ &nbsp; ابدأ الاختبار</button>
+    </div>
+
+    <!-- QUIZ SCREEN -->
+    <div class="quiz-screen" id="quizScreen">
+      <div class="quiz-header">
+        <div class="q-counter">السؤال <strong id="qCur">1</strong> من <strong id="qTotal">10</strong></div>
+        <div class="q-score-live">الإجابات الصحيحة: <span id="liveScore">0</span></div>
+      </div>
+      <div class="progress-wrap"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+      <div class="q-card">
+        <div class="q-num-badge" id="qBadge">سؤال ١</div>
+        <p class="q-text" id="qText"></p>
+        <div class="answers-grid" id="answersGrid"></div>
+      </div>
+      <div class="feedback-bar" id="feedbackBar">
+        <span id="feedbackIcon" style="font-size:1.4rem"></span>
+        <span id="feedbackText"></span>
+      </div>
+      <button class="next-btn" id="nextBtn" onclick="nextQuestion()">السؤال التالي ←</button>
+    </div>
+
+    <!-- RESULTS -->
+    <div class="results-screen" id="resultsScreen">
+      <div class="results-emoji" id="resultsEmoji">🏆</div>
+      <div class="results-score" id="resultsScore">0 / 0</div>
+      <p class="results-label">مجموع نقاطك</p>
+      <div class="results-cards">
+        <div class="rc right"><div class="rc-num" id="rcRight">0</div><div class="rc-lbl">✔ إجابة صحيحة</div></div>
+        <div class="rc wrong"><div class="rc-num" id="rcWrong">0</div><div class="rc-lbl">✘ إجابة خاطئة</div></div>
+      </div>
+      <p class="results-msg" id="resultsMsg"></p>
+      <button class="retry-btn" onclick="retryQuiz()">🔄 &nbsp; إعادة الاختبار</button>
+      <button class="retry-btn" onclick="showCountScreen()" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.15);color:var(--cream)">📋 &nbsp; اختر عدداً مختلفاً</button>
+    </div>
+  </div>
+</section>
+
+<div class="confetti-wrap" id="confettiWrap"></div>
+
+
+<!-- ═══ CREDIT SECTION ═══ -->
+<section class="credit-section" id="creditSection">
+  <div class="credit-inner">
+    <div class="credit-stars" id="creditStars"></div>
+
+    <div class="credit-flag-mini">
+      <div class="cf-stripe" style="background:#000"></div>
+      <div class="cf-stripe" style="background:#fff"></div>
+      <div class="cf-stripe" style="background:#007A3D"></div>
+      <div class="cf-tri"></div>
+      <div class="cf-star">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50,6 L55.8,26.8 L74.5,20 L64,38.5 L83,48.5 L64.5,55 L69,74.5 L50,62.5 L31,74.5 L35.5,55 L17,48.5 L36,38.5 L25.5,20 L44.2,26.8 Z" fill="#fff"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="credit-badge">
+      <span class="credit-label-top">إعداد الطالب</span>
+      <div class="credit-name-wrap">
+        <span class="credit-name" id="creditName"></span>
+        <span class="credit-cursor">|</span>
+      </div>
+      <div class="credit-divider"></div>
+      <span class="credit-school" id="creditSchool"></span>
+    </div>
+
+    <div class="credit-ribbon">
+      <span>🇯🇴</span>
+      <span>المملكة الأردنية الهاشمية</span>
+      <span>·</span>
+      <span>يوم العلم ٢٠٢٦</span>
+      <span>🇯🇴</span>
+    </div>
+  </div>
+</section>
+
+<style>
+.credit-section{
+  padding:5rem 2rem 4rem;
+  border-top:1px solid rgba(255,255,255,.06);
+  position:relative;
+  overflow:hidden;
+  background:radial-gradient(ellipse at 50% 0%,rgba(212,175,55,.06) 0%,transparent 60%);
+}
+.credit-inner{
+  max-width:700px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:2rem;
+  position:relative;
+  z-index:2;
+}
+
+/* floating mini stars */
+.credit-stars{position:absolute;inset:0;pointer-events:none;z-index:0}
+.c-star{position:absolute;width:4px;height:4px;border-radius:50%;background:var(--gold);
+  animation:cStarFloat var(--dur,4s) ease-in-out infinite var(--del,0s);opacity:0}
+@keyframes cStarFloat{
+  0%{opacity:0;transform:translateY(0) scale(0)}
+  20%{opacity:.7;transform:translateY(-12px) scale(1)}
+  80%{opacity:.5;transform:translateY(-40px) scale(.8)}
+  100%{opacity:0;transform:translateY(-70px) scale(0)}
+}
+
+/* mini flag */
+.credit-flag-mini{
+  width:130px;height:65px;position:relative;border-radius:3px;overflow:hidden;
+  box-shadow:0 0 0 1px rgba(255,255,255,.12),0 8px 30px rgba(0,0,0,.7);
+  animation:flagFloat 4s ease-in-out infinite,creditFlagIn 1.2s cubic-bezier(.34,1.56,.64,1) both;
+  flex-shrink:0;
+}
+@keyframes creditFlagIn{
+  from{opacity:0;transform:scale(.4) rotate(-15deg)}
+  to{opacity:1;transform:scale(1) rotate(0)}
+}
+.cf-stripe{height:33.333%;width:100%}
+.cf-tri{
+  position:absolute;top:0;left:0;
+  border-style:solid;
+  border-width:32.5px 0 32.5px 50px;
+  border-color:transparent transparent transparent var(--red);
+}
+.cf-star{
+  position:absolute;top:50%;left:24px;transform:translate(-50%,-50%);
+  width:20px;height:20px;
+  animation:spin 8s linear infinite;
+}
+
+/* badge */
+.credit-badge{
+  text-align:center;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(212,175,55,.18);
+  border-radius:20px;
+  padding:2rem 2.5rem;
+  width:100%;
+  max-width:520px;
+  position:relative;
+  animation:badgeIn 1.4s cubic-bezier(.34,1.56,.64,1) .3s both;
+  box-shadow:0 0 60px rgba(212,175,55,.04),inset 0 1px 0 rgba(255,255,255,.06);
+}
+@keyframes badgeIn{
+  from{opacity:0;transform:translateY(40px) scale(.9)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+.credit-badge::before{
+  content:'⭐';
+  position:absolute;
+  top:-18px;left:50%;transform:translateX(-50%);
+  font-size:1.8rem;
+  filter:drop-shadow(0 0 8px rgba(212,175,55,.6));
+  animation:starBounce 2.5s ease-in-out infinite;
+}
+@keyframes starBounce{0%,100%{transform:translateX(-50%) scale(1)}50%{transform:translateX(-50%) scale(1.3)}}
+
+.credit-label-top{
+  font-size:.7rem;
+  letter-spacing:.25em;
+  color:var(--gold);
+  text-transform:uppercase;
+  display:block;
+  margin-bottom:1rem;
+  opacity:.8;
+}
+.credit-name-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+  min-height:52px;
+}
+.credit-name{
+  font-family:'Amiri',serif;
+  font-size:clamp(1.4rem,4vw,2rem);
+  font-weight:700;
+  color:var(--gold);
+  text-shadow:0 0 30px rgba(212,175,55,.4);
+  direction:rtl;
+}
+.credit-cursor{
+  font-size:1.8rem;
+  color:var(--gold);
+  animation:blink .8s step-end infinite;
+  opacity:.8;
+}
+@keyframes blink{0%,100%{opacity:.8}50%{opacity:0}}
+
+.credit-divider{
+  width:60px;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(212,175,55,.5),transparent);
+  margin:1rem auto;
+}
+.credit-school{
+  font-family:'Tajawal',sans-serif;
+  font-size:1rem;
+  font-weight:500;
+  color:rgba(255,255,255,.7);
+  line-height:1.7;
+  direction:rtl;
+  display:block;
+  min-height:30px;
+}
+
+/* ribbon */
+.credit-ribbon{
+  display:flex;
+  align-items:center;
+  gap:.85rem;
+  font-size:.8rem;
+  color:rgba(255,255,255,.35);
+  letter-spacing:.1em;
+  animation:badgeIn 1.4s ease .9s both;
+}
+.credit-ribbon span{font-family:'Tajawal',sans-serif}
+
+@media(max-width:500px){
+  .credit-badge{padding:1.5rem 1.2rem}
+}
+</style>
+
+<script>
+(function(){
+  const cs=document.getElementById('creditStars');
+  for(let i=0;i<30;i++){
+    const s=document.createElement('div');
+    s.className='c-star';
+    s.style.cssText='left:'+Math.random()*100+'%;top:'+(40+Math.random()*60)+'%;--dur:'+(3+Math.random()*4)+'s;--del:'+(Math.random()*6)+'s';
+    cs.appendChild(s);
+  }
+
+  const nameEl=document.getElementById('creditName');
+  const schoolEl=document.getElementById('creditSchool');
+  const nameText='سليم راني سليم العمري';
+  const schoolText='مدرسة أكاديمية الينا التربوية';
+
+  function typeChar(el, text, idx, cb){
+    if(idx >= text.length){ if(cb) setTimeout(cb, 400); return; }
+    el.textContent = text.slice(0, idx+1);
+    setTimeout(()=> typeChar(el, text, idx+1, cb), 55+Math.random()*40);
+  }
+
+  function eraseChar(el, cb){
+    if(el.textContent.length === 0){ if(cb) cb(); return; }
+    el.textContent = el.textContent.slice(0, -1);
+    setTimeout(()=> eraseChar(el, cb), 30);
+  }
+
+  function runCycle(){
+    nameEl.textContent='';
+    schoolEl.textContent='';
+    setTimeout(()=>{
+      typeChar(nameEl, nameText, 0, ()=>{
+        setTimeout(()=>{
+          typeChar(schoolEl, schoolText, 0, ()=>{
+            setTimeout(()=>{
+              eraseChar(schoolEl, ()=>{
+                eraseChar(nameEl, ()=>{
+                  setTimeout(runCycle, 600);
+                });
+              });
+            }, 2500);
+          });
+        }, 200);
+      });
+    }, 400);
+  }
+
+  const target=document.getElementById('creditSection');
+  let started=false;
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting && !started){
+        started=true;
+        setTimeout(runCycle, 600);
+      }
+    });
+  },{threshold:.3});
+  obs.observe(target);
+})();
+</script>
+
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-bar">
+    <span style="background:#000"></span>
+    <span style="background:var(--red)"></span>
+    <span style="background:#fff"></span>
+    <span style="background:var(--green)"></span>
+  </div>
+  <h2 class="footer-title">المملكة الأردنية الهاشمية</h2>
+  <p class="footer-sub">وزارة التربية والتعليم · مديرية التربية والتعليم / لواء الأغوار الشمالية · ٢٠٢٦</p>
+</footer>
+
+<script>
+// Generate twinkling stars
+const sb = document.getElementById('stars');
+for(let i=0;i<120;i++){
+  const s=document.createElement('div');
+  s.className='star-dot';
+  const sz=Math.random()*2+0.5;
+  s.style.cssText=`
+    left:${Math.random()*100}%;
+    top:${Math.random()*100}%;
+    width:${sz}px;height:${sz}px;
+    --d:${(Math.random()*4+1.5).toFixed(1)}s;
+    --dl:${(Math.random()*5).toFixed(1)}s;
+    opacity:${Math.random()*.4+.1}
+  `;
+  sb.appendChild(s);
+}
+
+// Intersection Observer for timeline items
+const tls=document.querySelectorAll('.tl-item,.points-list li');
+const obs2=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.style.animationPlayState='running';});
+},{threshold:.15});
+tls.forEach(el=>{el.style.animationPlayState='paused';obs2.observe(el);});
+
+// ══════════════════════════════
+//  QUESTION BANK
+// ══════════════════════════════
+const ALL_Q=[
+  {q:"ما هو لون المثلث في العلم الأردني؟",a:["أحمر","أخضر","أسود","أبيض"],c:0,ex:"المثلث الأحمر يرمز إلى الثورة العربية الكبرى والهاشميين."},
+  {q:"كم عدد أضلاع النجمة في العلم الأردني؟",a:["خمسة","ستة","سبعة","ثمانية"],c:2,ex:"النجمة السباعية ترمز إلى سورة الفاتحة والأقاليم السبع."},
+  {q:"ما لون الشريط العلوي في العلم الأردني؟",a:["أبيض","أخضر","أسود","أحمر"],c:2,ex:"الشريط الأسود يرمز إلى الدولة العباسية."},
+  {q:"ما لون الشريط الأوسط في العلم الأردني؟",a:["أسود","أبيض","أخضر","أحمر"],c:1,ex:"الشريط الأبيض يرمز إلى الدولة الأموية."},
+  {q:"ما لون الشريط الأسفل في العلم الأردني؟",a:["أحمر","أسود","أبيض","أخضر"],c:3,ex:"الشريط الأخضر يرمز إلى الدولة الفاطمية والإسلام."},
+  {q:"في أي عام أُعلن استقلال المملكة الأردنية الهاشمية؟",a:["1946","1948","1950","1944"],c:0,ex:"أُعلن استقلال الأردن في 25 مايو 1946."},
+  {q:"من أسّس إمارة شرق الأردن عام 1921؟",a:["الملك حسين","الأمير فيصل","الأمير عبدالله الأول","الشريف الحسين"],c:2,ex:"الأمير عبدالله بن الحسين أسّس الإمارة وأصبح أول ملك للأردن."},
+  {q:"ما عاصمة المملكة الأردنية الهاشمية؟",a:["إربد","الزرقاء","عمّان","العقبة"],c:2,ex:"عمّان عاصمة المملكة وأكبر مدنها."},
+  {q:"في أي عام قاد الشريف الحسين الثورة العربية الكبرى؟",a:["1910","1914","1916","1920"],c:2,ex:"انطلقت الثورة العربية الكبرى في يونيو 1916 من مكة المكرمة."},
+  {q:"ما اللون الذي يرمز للدولة العباسية في العلم الأردني؟",a:["الأحمر","الأبيض","الأخضر","الأسود"],c:3,ex:"الأسود كان شعار الدولة العباسية التي حكمت من بغداد."},
+  {q:"ما اللون الذي يرمز للدولة الأموية في العلم الأردني؟",a:["الأخضر","الأبيض","الأحمر","الأسود"],c:1,ex:"اتّخذ الأمويون الأبيض شعاراً لهم."},
+  {q:"ما اللون الذي يرمز للدولة الفاطمية في العلم الأردني؟",a:["الأسود","الأحمر","الأبيض","الأخضر"],c:3,ex:"اشتُهر الفاطميون باللون الأخضر الذي يرمز أيضاً للإسلام."},
+  {q:"أين يقع البحر الميت؟",a:["شمال الأردن","جنوب الأردن","غرب الأردن","شرق الأردن"],c:2,ex:"البحر الميت يقع غرب الأردن ويُعدّ أخفض نقطة على سطح الأرض."},
+  {q:"ما الاسم القديم لمدينة عمّان في العهد الروماني؟",a:["جرش","فيلادلفيا","بترا","العلا"],c:1,ex:"كانت عمّان تُعرف في العهد الروماني باسم فيلادلفيا."},
+  {q:"ما أبرز أثر تاريخي في الأردن يُعدّ من عجائب الدنيا؟",a:["جرش","قلعة عجلون","مدينة البتراء","قلعة الكرك"],c:2,ex:"مدينة البتراء النبطية انضمت إلى عجائب الدنيا السبع الجديدة عام 2007."},
+  {q:"في أي محافظة تقع مدينة البتراء؟",a:["إربد","معان","العقبة","الكرك"],c:1,ex:"البتراء تقع في محافظة معان جنوب المملكة."},
+  {q:"ما تقريباً مساحة الأردن بالكيلومتر المربع؟",a:["50 ألف","89 ألف","120 ألف","65 ألف"],c:1,ex:"تبلغ مساحة الأردن نحو 89,342 كيلومتر مربع."},
+  {q:"ما أعلى قمة جبلية في الأردن؟",a:["جبل رم","جبل عجلون","جبل أم الدامي","جبل الشيخ"],c:2,ex:"جبل أم الدامي يصل ارتفاعه إلى نحو 1854 متراً وهو أعلى قمة في الأردن."},
+  {q:"ما اسم الملك الحالي للمملكة الأردنية الهاشمية؟",a:["الملك الحسين","الملك عبدالله الثاني","الملك طلال","الأمير محمد"],c:1,ex:"الملك عبدالله الثاني يحكم الأردن منذ عام 1999."},
+  {q:"في أي عام تولّى الملك عبدالله الثاني العرش؟",a:["1995","1999","2000","1997"],c:1,ex:"تولّى الملك عبدالله الثاني العرش في 7 فبراير 1999 بعد وفاة والده الملك الحسين."},
+  {q:"ما عملة الأردن الرسمية؟",a:["الريال","الجنيه","الدينار","الدرهم"],c:2,ex:"الدينار الأردني العملة الرسمية للمملكة ويُرمز له بـ JD."},
+  {q:"ما المدينة الأردنية المعروفة بأعمدتها الرومانية؟",a:["الزرقاء","إربد","جرش","مادبا"],c:2,ex:"جرش تحتضن من أجمل المواقع الرومانية في العالم."},
+  {q:"ما المدينة الأردنية الوحيدة المطلّة على البحر الأحمر؟",a:["الكرك","معان","العقبة","الطفيلة"],c:2,ex:"العقبة هي المنفذ البحري الوحيد للأردن على البحر الأحمر."},
+  {q:"من هو مؤسس المملكة الأردنية الهاشمية الحديثة؟",a:["الملك طلال","الملك الحسين","الملك عبدالله الأول","الشريف علي"],c:2,ex:"الملك عبدالله الأول بن الحسين هو مؤسس المملكة الأردنية الهاشمية."},
+  {q:"ما الدين الرسمي للمملكة الأردنية الهاشمية؟",a:["المسيحية","اليهودية","الإسلام","لا دين رسمي"],c:2,ex:"الإسلام الدين الرسمي للدولة وفق الدستور الأردني."},
+  {q:"في أي يوم يُحتفل بعيد الاستقلال الأردني؟",a:["1 يناير","25 مايو","11 مارس","25 ديسمبر"],c:1,ex:"يُحتفل بعيد الاستقلال في 25 مايو من كل عام."},
+  {q:"ما المدينة الأردنية المعروفة بخريطة الفسيفساء البيزنطية؟",a:["جرش","البتراء","مادبا","عجلون"],c:2,ex:"تحتضن مادبا خريطة فسيفساء بيزنطية تُعدّ من أقدم خرائط الأرض المقدسة."},
+  {q:"ما الحضارة التي بنت مدينة البتراء؟",a:["الرومانية","البيزنطية","النبطية","العباسية"],c:2,ex:"الأنباط حضارة عربية قديمة نحتوا مدينة البتراء في الصخر قبل الميلاد."},
+  {q:"ما عدد ألوان العلم الأردني؟",a:["ثلاثة","أربعة","خمسة","اثنان"],c:1,ex:"العلم الأردني يتضمن أربعة ألوان: الأسود والأبيض والأخضر والأحمر."},
+  {q:"في أي جهة من العلم يقع المثلث الأحمر؟",a:["اليمين","اليسار","الوسط","الأعلى"],c:1,ex:"المثلث الأحمر في الجانب الأيسر (العمود) من العلم."},
+  {q:"ما الدولة التي فرضت انتدابها على شرق الأردن قبل الاستقلال؟",a:["فرنسا","إيطاليا","بريطانيا","روسيا"],c:2,ex:"خضع شرق الأردن للانتداب البريطاني من 1921 حتى الاستقلال عام 1946."},
+  {q:"من هو الملك الأردني الذي وقّع اتفاقية السلام مع إسرائيل عام 1994؟",a:["الملك عبدالله الأول","الملك طلال","الملك الحسين","الملك عبدالله الثاني"],c:2,ex:"وقّع الملك الحسين بن طلال معاهدة وادي عربة مع إسرائيل في أكتوبر 1994."},
+  {q:"ما عاصمة إمارة شرق الأردن الأولى؟",a:["الكرك","السلط","إربد","الزرقاء"],c:1,ex:"كانت السلط العاصمة الإدارية الأولى لشرق الأردن."},
+  {q:"ما اسم البادية الأردنية الشرقية الكبرى؟",a:["بادية النفود","بادية الشام","بادية الحجاز","بادية عُمان"],c:1,ex:"بادية الشام تمتد عبر الأردن وسوريا والعراق والسعودية."},
+  {q:"ما المدينة الأردنية المعروفة بالمدينة الوردية؟",a:["جرش","البتراء","مادبا","أم قيس"],c:1,ex:"سُمّيت البتراء بالمدينة الوردية لأنها منحوتة في صخر وردي اللون."},
+  {q:"ما أكبر محمية طبيعية في الأردن؟",a:["محمية ضانا","محمية عجلون","محمية الأزرق","محمية الرم"],c:0,ex:"محمية ضانا هي أكبر محمية طبيعية في الأردن."},
+  {q:"ما اسم المعبد الروماني الشهير في جرش؟",a:["معبد آرتيميس","معبد أثينا","معبد زيوس","معبد أبولو"],c:0,ex:"معبد آرتيميس في جرش من أبرز المعالم الرومانية في الشرق الأوسط."},
+  {q:"في أي وادٍ تقع مدينة البتراء؟",a:["وادي الموجب","وادي رم","وادي موسى","وادي السير"],c:2,ex:"تقع البتراء في وادي موسى الذي سُمّي نسبةً إلى النبي موسى عليه السلام."},
+  {q:"ما أشهر صحراء رملية في الأردن؟",a:["وادي موسى","وادي رم","وادي الأردن","وادي اليابس"],c:1,ex:"وادي رم (وادي القمر) يُعدّ من أجمل الصحاري الرملية في العالم."},
+  {q:"ما اسم ولي العهد الأردني الحالي؟",a:["الأمير حمزة","الأمير علي","الأمير الحسين","الأمير فيصل"],c:2,ex:"الأمير الحسين بن عبدالله الثاني ولي عهد المملكة الأردنية الهاشمية."},
+  {q:"ما اسم ملكة الأردن زوجة الملك عبدالله الثاني؟",a:["الملكة نور","الملكة بسمة","الملكة رانيا","الملكة علياء"],c:2,ex:"الملكة رانيا العبدالله زوجة الملك وناشطة عالمية في مجال التعليم."},
+  {q:"ما المدينة الأردنية ذات أكبر عدد من السكان بعد عمّان؟",a:["إربد","الزرقاء","العقبة","الكرك"],c:1,ex:"الزرقاء ثاني أكبر مدينة في الأردن من حيث عدد السكان."},
+  {q:"ما الدول المجاورة للأردن؟",a:["السعودية وسوريا والعراق وفلسطين وإسرائيل","تركيا وإيران ومصر","ليبيا والسودان واليمن","الكويت وقطر والبحرين"],c:0,ex:"يحدّ الأردن السعودية والعراق وسوريا وفلسطين وإسرائيل."},
+  {q:"ما اسم أول جامعة حكومية في الأردن؟",a:["جامعة اليرموك","الجامعة الأردنية","جامعة البلقاء","جامعة مؤتة"],c:1,ex:"أُسّست الجامعة الأردنية عام 1962 وهي أعرق الجامعات الأردنية."},
+  {q:"ما اسم المعركة الشهيرة التي خاضها الجيش الأردني عام 1968؟",a:["معركة الكرامة","معركة حطين","معركة اليرموك","معركة عين جالوت"],c:0,ex:"في معركة الكرامة 1968 صمد الجيش الأردني أمام القوات الإسرائيلية."},
+  {q:"ما الطريق التاريخي القديم الذي يمر بالأردن؟",a:["طريق الحرير","درب الحج الشامي","طريق التوابل","طريق الملوك"],c:3,ex:"طريق الملوك طريق قديم يمتد من شمال الأردن حتى خليج العقبة."},
+  {q:"ما أبرز صادرات الأردن المعدنية؟",a:["الذهب","الفوسفات","الحديد","اليوران"],c:1,ex:"الفوسفات والبوتاس من أبرز الصادرات المعدنية الأردنية."},
+  {q:"ما الاسم الرسمي الكامل للأردن؟",a:["إمارة الأردن","الجمهورية العربية الأردنية","المملكة الأردنية الهاشمية","دولة الأردن"],c:2,ex:"الاسم الرسمي هو المملكة الأردنية الهاشمية منذ الاستقلال 1946."},
+  {q:"في أي سنة أُدرجت البتراء ضمن عجائب الدنيا السبع الجديدة؟",a:["2000","2007","2010","2005"],c:1,ex:"أُعلنت البتراء إحدى عجائب الدنيا السبع الجديدة في يوليو 2007."},
+  {q:"ما نوع الحكم في الأردن؟",a:["جمهورية رئاسية","ملكية دستورية","ملكية مطلقة","اتحادية"],c:1,ex:"الأردن ملكية دستورية يحكمها الملك ويضمّ برلماناً ذا مجلسين."},
+  {q:"ما اسم البرلمان الأردني؟",a:["المجلس التشريعي","مجلس الأمة","البرلمان الوطني","الجمعية العامة"],c:1,ex:"مجلس الأمة يتكون من مجلس النواب ومجلس الأعيان."},
+  {q:"ما عدد المحافظات في المملكة الأردنية الهاشمية؟",a:["8","10","12","15"],c:2,ex:"تُقسَّم المملكة إلى 12 محافظة."},
+  {q:"ما اسم مطار عمّان الدولي الرئيسي؟",a:["مطار الحسين الدولي","مطار الملكة علياء الدولي","مطار عمّان المدني","مطار الملك عبدالله"],c:1,ex:"مطار الملكة علياء الدولي هو المطار الرئيسي للأردن."},
+  {q:"ما الموقع الأثري المرتبط بقصة النبي موسى عليه السلام في الأردن؟",a:["جبل أم الدامي","جبل نيبو","البتراء","جرش"],c:1,ex:"جبل نيبو يُعتقد أنه المكان الذي أرى الله فيه موسى الأرض المقدسة."},
+  {q:"ما المهرجان الثقافي الكبير الذي يُقام في جرش سنوياً؟",a:["مهرجان البتراء","مهرجان جرش للثقافة والفنون","مهرجان عمّان","مهرجان العقبة"],c:1,ex:"مهرجان جرش للثقافة والفنون يُقام سنوياً منذ عام 1981."},
+  {q:"ما أشهر الأسرة الحاكمة في الأردن؟",a:["السعودية","الهاشمية","العلوية","السعدية"],c:1,ex:"الأسرة الهاشمية تنتسب إلى آل بيت النبي محمد ﷺ."},
+  {q:"ما البلد الذي لا يُعدّ من جيران الأردن؟",a:["العراق","السعودية","مصر","لبنان"],c:3,ex:"لبنان لا يشترك في حدود برية مباشرة مع الأردن."},
+  {q:"ما نهر الحدود الشمالية بين الأردن وسوريا؟",a:["نهر الأردن","نهر الزرقاء","نهر اليرموك","نهر المجيب"],c:2,ex:"نهر اليرموك يشكّل الحدود الشمالية بين الأردن وسوريا."},
+  {q:"ما لقب الملك الحسين بن طلال في الثقافة الشعبية؟",a:["ملك القلوب","ملك الحرب","الملك المحارب","ملك العروبة"],c:0,ex:"اشتُهر الملك الحسين بلقب 'ملك القلوب' لمكانته الشعبية."},
+  {q:"ما المناخ السائد في غالبية أراضي الأردن؟",a:["استوائي","متوسطي","صحراوي وشبه جاف","قطبي"],c:2,ex:"يسود المناخ الصحراوي وشبه الجاف معظم الأردن."},
+  {q:"ما عدد أضلاع النجمة التي أُضيفت للعلم عام 1928؟",a:["خمسة","ستة","سبعة","ثمانية"],c:2,ex:"النجمة السباعية أُضيفت للعلم لأول مرة عام 1928."},
+  {q:"من كتب النشيد الوطني الأردني؟",a:["مصطفى وهبي التل","عبدالمنعم الرفاعي","أحمد شوقي","أمجد ناصر"],c:1,ex:"النشيد الوطني الأردني كتبه عبدالمنعم الرفاعي."},
+  {q:"ما اليوم الوطني الذي يُحيي فيه الأردن ذكرى الجيش؟",a:["10 يونيو","1 أغسطس","1 يوليو","25 مايو"],c:0,ex:"يُحيي الأردن ذكرى تأسيس الجيش في 10 يونيو من كل عام."},
+  {q:"أين تقع قلعة الكرك؟",a:["الشمال","الوسط","الجنوب","الغرب"],c:1,ex:"تقع الكرك في وسط غرب الأردن وكانت مركزاً صليبياً مهماً."},
+  {q:"ما المملكة القديمة التي ازدهرت في أراضي الأردن؟",a:["مملكة سبأ","مملكة موآب","مملكة أكد","مملكة ميتاني"],c:1,ex:"مملكة موآب القديمة قامت في وسط الأردن وذُكرت في الكتب المقدسة."},
+  {q:"ما نسبة الأراضي الصحراوية في الأردن تقريباً؟",a:["30%","50%","75%","90%"],c:2,ex:"نحو 75% من مساحة الأردن صحراء أو شبه صحراء."},
+  {q:"ما اسم الصحابي القائد لمعركة مؤتة المدفون في الأردن؟",a:["خالد بن الوليد","عمرو بن العاص","زيد بن حارثة","أبو هريرة"],c:2,ex:"زيد بن حارثة مولى النبي ﷺ وقائد معركة مؤتة مدفون في مؤتة بالأردن."},
+  {q:"ما اسم مدينة الأردن ذات الحمّامات المعدنية الطبيعية الساخنة؟",a:["العقبة","إربد","ماعين","الزرقاء"],c:2,ex:"حمّامات ماعين تشتهر بمياهها المعدنية الساخنة وتقع قرب البحر الميت."},
+  {q:"ما لغة الدولة الرسمية في الأردن؟",a:["الإنجليزية","الفرنسية","العربية","الفارسية"],c:2,ex:"اللغة العربية هي اللغة الرسمية للمملكة الأردنية الهاشمية."},
+  {q:"ما طول ساحل الأردن على البحر الأحمر تقريباً؟",a:["10 كم","26 كم","50 كم","80 كم"],c:1,ex:"يمتد الساحل الأردني على البحر الأحمر بطول نحو 26 كيلومتراً."},
+  {q:"في أي قارة تقع المملكة الأردنية الهاشمية؟",a:["آسيا","أفريقيا","أوروبا","أمريكا اللاتينية"],c:0,ex:"الأردن دولة عربية آسيوية تقع في منطقة الشرق الأوسط."},
+  {q:"ما اسم الجامعة الأردنية الواقعة في الزرقاء؟",a:["جامعة اليرموك","الجامعة الأردنية","الجامعة الهاشمية","جامعة مؤتة"],c:2,ex:"الجامعة الهاشمية تقع في مدينة الزرقاء وهي من الجامعات الحكومية المرموقة."},
+  {q:"ما مدينة الأردن الأكثر سكاناً بعد عمّان والزرقاء؟",a:["العقبة","إربد","مادبا","جرش"],c:1,ex:"إربد ثالث أكبر مدينة في الأردن وتُعدّ عاصمة الشمال."},
+  {q:"ما الوادي الجيولوجي الكبير الذي يمر بالأردن؟",a:["الغور","وادي رم","وادي الأردن","الصدع الأفريقي العظيم"],c:3,ex:"الصدع الأفريقي العظيم يمر عبر الأردن محدثاً منخفض البحر الميت والغور."},
+  {q:"ما شعار جامعة الدول العربية التي تنتمي إليها الأردن؟",a:["نجمة ذهبية","هلال أبيض","خريطة الوطن العربي","سلسلة ذهبية"],c:2,ex:"شعار الجامعة العربية يتضمن خريطة الوطن العربي وحلقات تمثل الدول الأعضاء."},
+  {q:"ما قلعة الأردن الصليبية الأشهر في الجنوب؟",a:["قلعة عجلون","قلعة الكرك","قلعة الربض","قلعة شوبك"],c:1,ex:"قلعة الكرك تُعدّ من أهم القلاع الصليبية في منطقة الشرق الأوسط."},
+  {q:"ما الموقع الطبيعي المشهور بالرمال الحمراء والتكوينات الصخرية الضخمة؟",a:["البتراء","وادي رم","مادبا","العقبة"],c:1,ex:"وادي رم اشتُهر عالمياً بمشاهد الأفلام كلورانس العرب والمريخي."},
+  {q:"من هو الملك الأردني الذي حكم بعد عبدالله الأول مباشرةً؟",a:["الملك الحسين","الملك طلال","الملك عبدالله الثاني","الأمير محمد"],c:1,ex:"الملك طلال بن عبدالله حكم بعد اغتيال والده عام 1951 لفترة وجيزة."},
+  {q:"في أي عام اغتيل الملك عبدالله الأول؟",a:["1949","1950","1951","1953"],c:2,ex:"اغتيل الملك عبدالله الأول في المسجد الأقصى بالقدس عام 1951."},
+  {q:"ما أكبر بحيرات الأردن الطبيعية؟",a:["بحيرة الغور","بحيرة الأزرق","بحيرة طبريا","بحيرة الحمّة"],c:1,ex:"بحيرة الأزرق محمية رطبة مهمة تُعدّ نقطة استراحة للطيور المهاجرة."},
+  {q:"ما الاتفاقية التي رسمت حدود الأردن مع بريطانيا عام 1946؟",a:["معاهدة لندن","اتفاقية لوزان","معاهدة لندن 1946","معاهدة الاستقلال"],c:3,ex:"معاهدة الاستقلال الأردنية البريطانية رسمت الاستقلال التام للمملكة."},
+  {q:"ما المنطقة الأردنية التي تُعدّ أخفض نقطة مأهولة على وجه الأرض؟",a:["وادي رم","منطقة الغور","البحر الميت","العقبة"],c:2,ex:"منطقة البحر الميت أخفض نقطة على سطح الكرة الأرضية (-430 م عن سطح البحر)."},
+  {q:"ما المكان الذي يُعتقد أن النبي إيليا صعد منه إلى السماء وفق التراث؟",a:["جرش","تل مار إيليا في وادي الخرار","جبل نيبو","مادبا"],c:1,ex:"تل مار إيليا في منطقة وادي الخرار قرب البحر الميت مكان مقدّس."},
+  {q:"ما الصحابي المدفون في الأردن الذي كان أميراً لجيش مؤتة؟",a:["أبو بكر الصديق","جعفر بن أبي طالب","عثمان بن عفان","معاذ بن جبل"],c:1,ex:"جعفر بن أبي طالب ذو الجناحين أمير أول لجيش مؤتة مدفون في مؤتة."},
+  {q:"ما شعار مدينة البتراء؟",a:["المدينة الذهبية","مدينة الورد","المدينة الوردية المنحوتة في الصخر","مدينة الملوك"],c:2,ex:"تُعرف البتراء بـ'المدينة الوردية المنحوتة في الصخر'."},
+  {q:"أي جهة من الأردن تقع العقبة؟",a:["الشمال الشرقي","الجنوب الغربي","الشمال الغربي","الجنوب الشرقي"],c:1,ex:"العقبة تقع في الجنوب الغربي من الأردن على رأس خليج العقبة."},
+  {q:"ما أبرز ما يُميّز علم الأردن عن غيره من الأعلام العربية؟",a:["المثلث الأحمر فقط","النجمة السباعية في المثلث","الشرائط الثلاثة","اللون الأخضر"],c:1,ex:"النجمة السباعية داخل المثلث الأحمر هي الميزة الفريدة للعلم الأردني."},
+  {q:"ما أكبر مدن الأردن من حيث المساحة؟",a:["الزرقاء","عمّان","إربد","معان"],c:1,ex:"عمّان العاصمة هي أكبر مدن الأردن مساحةً وعدد سكان."},
+  {q:"ما المنطقة التي تُعقد فيها السباقات الدولية للسيارات في الأردن؟",a:["وادي رم","العقبة","جرش","عمّان"],c:0,ex:"وادي رم يستضيف سباقات دولية للسيارات ورالي عالمي."},
+  {q:"ما النسبة المئوية التي يُشكّلها المسلمون في الأردن تقريباً؟",a:["60%","75%","92%","99%"],c:2,ex:"يُشكّل المسلمون نحو 92-95% من إجمالي سكان الأردن."},
+  {q:"ما اسم الملك الأردني الذي أعلن الوحدة مع الضفة الغربية عام 1950؟",a:["الملك الحسين","الملك طلال","الملك عبدالله الأول","الملك عبدالله الثاني"],c:2,ex:"الملك عبدالله الأول أعلن الوحدة بين الضفتين الشرقية والغربية عام 1950."},
+  {q:"ما الأسرة النبطية التي حكمت البتراء؟",a:["الأنباط","الغساسنة","المناذرة","الأيوبيون"],c:0,ex:"الأنباط حضارة عربية قديمة حكمت المنطقة حول البتراء لقرون."},
+  {q:"ما الرياضة الوطنية الأكثر شعبية في الأردن؟",a:["السباحة","كرة القدم","كرة السلة","الملاكمة"],c:1,ex:"كرة القدم الرياضة الأكثر شعبية في الأردن تليها كرة السلة."},
+  {q:"في أي عام استضافت عمّان قمة الجامعة العربية لأول مرة؟",a:["1964","1980","2001","1996"],c:2,ex:"استضافت عمّان قمة الجامعة العربية مرات عدة، من بينها قمة عام 2001."},
+  {q:"ما اسم أشهر فنانة أردنية عالمياً في مجال الغناء؟",a:["فيروز","ماجدة الرومي","ديانا حداد","فيفي عبده"],c:1,ex:"ماجدة الرومي مطربة لبنانية أردنية الجنسية لها شهرة عالمية واسعة."},
+  {q:"ما نهر الحدود بين الأردن وفلسطين (الضفة الغربية)؟",a:["نهر اليرموك","نهر الأردن","نهر الزرقاء","نهر المجيب"],c:1,ex:"نهر الأردن يشكّل الحدود الطبيعية بين المملكة والضفة الغربية."},
+  {q:"ما الجنسية الرياضية للملاكم الأردني الأبرز عمر قرادحي؟",a:["فلسطينية","أردنية","سورية","لبنانية"],c:1,ex:"الملاكم عمر قرادحي أردني الجنسية وهو من أبرز رياضيي الأردن."},
+  {q:"ما اليوم الذي تُحيي فيه الأردن ذكرى توحيد الضفتين الشرقية والغربية؟",a:["24 أبريل","25 مايو","11 أغسطس","1 أكتوبر"],c:0,ex:"يُحتفل في 24 أبريل بذكرى الوحدة الأردنية بين الضفتين."},
+  {q:"ما الحضارة التي شيّدت مدينة جرش في شمال الأردن؟",a:["اليونانية والرومانية","الفارسية","البيزنطية","الإسلامية"],c:0,ex:"أسّس اليونانيون جرش وطوّرها الرومان لتصبح من أبرز المدن الرومانية."}
+];
+
+// ── QUIZ STATE ──
+let Q=[],cur=0,score=0,chosen=-1,total=0;
+
+function showCountScreen(){
+  document.getElementById('quizLaunch').style.display='none';
+  document.getElementById('quizScreen').style.display='none';
+  document.getElementById('resultsScreen').style.display='none';
+  const cs=document.getElementById('countScreen');cs.style.display='block';
+  document.querySelectorAll('.count-opt').forEach(b=>b.classList.remove('selected'));
+  const sb=document.getElementById('startBtn');sb.classList.remove('ready');sb.textContent='▶  ابدأ الاختبار';
+  total=0;
+  cs.scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+function selectCount(n,btn){
+  total=Math.min(n,ALL_Q.length);
+  document.querySelectorAll('.count-opt').forEach(b=>b.classList.remove('selected'));
+  btn.classList.add('selected');
+  const sb=document.getElementById('startBtn');
+  sb.classList.add('ready');
+  sb.textContent='▶  ابدأ الاختبار ('+total+' سؤال)';
+}
+
+function shuffle(arr){return arr.slice().sort(()=>Math.random()-.5)}
+
+function startQuiz(){
+  if(!total)return;
+  Q=shuffle(ALL_Q).slice(0,total);
+  cur=0;score=0;chosen=-1;
+  document.getElementById('countScreen').style.display='none';
+  document.getElementById('resultsScreen').style.display='none';
+  const qs=document.getElementById('quizScreen');qs.style.display='block';
+  document.getElementById('qTotal').textContent=total;
+  document.getElementById('liveScore').textContent='0';
+  renderQuestion();
+  qs.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function renderQuestion(){
+  const q=Q[cur];
+  chosen=-1;
+  document.getElementById('qCur').textContent=cur+1;
+  document.getElementById('liveScore').textContent=score;
+  document.getElementById('progressFill').style.width=((cur/total)*100)+'%';
+  document.getElementById('qBadge').textContent='سؤال '+(cur+1);
+  document.getElementById('qText').textContent=q.q;
+  const letters=['أ','ب','ج','د'];
+  const grid=document.getElementById('answersGrid');
+  grid.innerHTML='';
+  const shuffled=q.a.map((t,i)=>({t,i})).sort(()=>Math.random()-.5);
+  shuffled.forEach(({t,i},idx)=>{
+    const btn=document.createElement('button');
+    btn.className='ans-btn';
+    btn.innerHTML='<span class="ans-letter">'+letters[idx]+'</span>'+t;
+    btn.onclick=()=>answer(btn,i,q.c,q.ex,grid.querySelectorAll('.ans-btn'));
+    grid.appendChild(btn);
+  });
+  const fb=document.getElementById('feedbackBar');
+  fb.className='feedback-bar';
+  document.getElementById('nextBtn').className='next-btn';
+}
+
+function answer(clicked,ansIdx,correct,ex,btns){
+  if(chosen!==-1)return;
+  chosen=ansIdx;
+  btns.forEach(b=>b.disabled=true);
+  const isRight=ansIdx===correct;
+  if(isRight){
+    clicked.classList.add('correct');
+    score++;
+    document.getElementById('liveScore').textContent=score;
+  } else {
+    clicked.classList.add('wrong');
+    const correctText=Q[cur].a[correct];
+    btns.forEach(b=>{
+      if(b.textContent.replace(/^[أبجد]\s*/,'').trim()===correctText) b.classList.add('reveal-correct');
+    });
+  }
+  const fb=document.getElementById('feedbackBar');
+  fb.className='feedback-bar show '+(isRight?'correct-fb':'wrong-fb');
+  document.getElementById('feedbackIcon').textContent=isRight?'✅':'❌';
+  document.getElementById('feedbackText').textContent=isRight
+    ?'إجابة صحيحة! '+ex
+    :'إجابة خاطئة. الصواب: '+Q[cur].a[correct]+' — '+ex;
+  const nb=document.getElementById('nextBtn');
+  nb.className='next-btn show';
+  nb.textContent=cur<total-1?'السؤال التالي ←':'عرض النتيجة 🏁';
+}
+
+function nextQuestion(){
+  cur++;
+  if(cur>=total){showResults();return;}
+  renderQuestion();
+  document.getElementById('quizScreen').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function showResults(){
+  document.getElementById('quizScreen').style.display='none';
+  const rs=document.getElementById('resultsScreen');rs.style.display='block';
+  const pct=Math.round((score/total)*100);
+  document.getElementById('resultsScore').textContent=score+' / '+total;
+  document.getElementById('rcRight').textContent=score;
+  document.getElementById('rcWrong').textContent=total-score;
+  let emoji,msg;
+  if(pct>=90){emoji='🏆';msg='ممتاز! أنت خبير في تاريخ الأردن وعلمه الوطني، تستحق أعلى الدرجات!';}
+  else if(pct>=75){emoji='🌟';msg='أحسنت! معلوماتك جيدة جداً عن المملكة الأردنية الهاشمية.';}
+  else if(pct>=55){emoji='👍';msg='جيد! لديك قاعدة معرفية لا بأس بها، استمر في التعلّم.';}
+  else if(pct>=35){emoji='📚';msg='لا بأس، راجع تاريخ الأردن وعلمه مرة أخرى وستتحسّن!';}
+  else{emoji='💪';msg='لا تيأس! كل بداية صعبة. راجع الصفحة من البداية وحاول مجدداً.';}
+  document.getElementById('resultsEmoji').textContent=emoji;
+  document.getElementById('resultsMsg').textContent=msg;
+  if(pct>=75)launchConfetti();
+  document.getElementById('progressFill').style.width='100%';
+  rs.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function retryQuiz(){
+  Q=shuffle(ALL_Q).slice(0,total);cur=0;score=0;chosen=-1;
+  document.getElementById('resultsScreen').style.display='none';
+  const qs=document.getElementById('quizScreen');qs.style.display='block';
+  document.getElementById('liveScore').textContent='0';
+  renderQuestion();
+  qs.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function launchConfetti(){
+  const wrap=document.getElementById('confettiWrap');wrap.innerHTML='';
+  const colors=['#D4AF37','#CC0001','#007A3D','#fff','#FFD700','#FF6B6B','#4ade80'];
+  for(let i=0;i<80;i++){
+    const c=document.createElement('div');c.className='cf';
+    const color=colors[Math.floor(Math.random()*colors.length)];
+    c.style.cssText='left:'+Math.random()*100+'%;background:'+color+';--dur:'+(Math.random()*2+2)+'s;--del:'+(Math.random()*1.5)+'s;--rot:'+(Math.random()*720-360)+'deg;width:'+(Math.random()*8+5)+'px;height:'+(Math.random()*10+8)+'px;border-radius:'+(Math.random()>.5?'50%':'2px');
+    wrap.appendChild(c);
+  }
+  setTimeout(()=>wrap.innerHTML='',5000);
+}
+</script>
+</body>
+</html>
